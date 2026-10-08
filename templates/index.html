@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Message Detector</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <div class="icon">🛡️</div>
+            <div>
+                <h1>Spam Message Detector</h1>
+                <p>AI-powered SMS spam classification</p>
+            </div>
+        </div>
+
+        <div class="card">
+
+            <label for="message">Enter your message</label>
+
+            <textarea
+                id="message"
+                placeholder="Type or paste an SMS message here..."
+            ></textarea>
+
+            <button id="checkButton" onclick="checkMessage()">
+                Check Message
+            </button>
+
+            <div id="result" class="result hidden">
+                <div id="resultIcon"></div>
+                <div>
+                    <h2 id="resultText"></h2>
+                    <p id="confidence"></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="examples">
+            <h3>Try an example</h3>
+
+            <button onclick="useExample('Congratulations! You won a free prize. Claim now!')">
+                🎁 Possible Spam
+            </button>
+
+            <button onclick="useExample('Hey, are you coming to class today?')">
+                💬 Normal Message
+            </button>
+        </div>
+
+        <footer>
+            Built with Python, Flask and Machine Learning
+        </footer>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
